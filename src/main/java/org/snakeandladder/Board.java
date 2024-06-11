@@ -1,43 +1,19 @@
 package org.snakeandladder;
 
-import java.util.HashMap;
+import java.io.Serializable;
 import java.util.Map;
 
-public class Board {
+public class Board implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private final int size;
     private final Map<Integer, Integer> snakes;
     private final Map<Integer, Integer> ladders;
 
-    public Board(int size) {
+    public Board(int size, Map<Integer, Integer> snakes, Map<Integer, Integer> ladders) {
         this.size = size;
-        this.snakes = new HashMap<>();
-        this.ladders = new HashMap<>();
-        initializeBoard();
-    }
-
-    private void initializeBoard() {
-        // Sample snakes
-        snakes.put(16, 6);
-        snakes.put(47, 26);
-        snakes.put(49, 11);
-        snakes.put(56, 53);
-        snakes.put(62, 19);
-        snakes.put(64, 60);
-        snakes.put(87, 24);
-        snakes.put(93, 73);
-        snakes.put(95, 75);
-        snakes.put(98, 78);
-
-        // Sample ladders
-        ladders.put(1, 38);
-        ladders.put(4, 14);
-        ladders.put(9, 31);
-        ladders.put(21, 42);
-        ladders.put(28, 84);
-        ladders.put(36, 44);
-        ladders.put(51, 67);
-        ladders.put(71, 91);
-        ladders.put(80, 100);
+        this.snakes = snakes;
+        this.ladders = ladders;
     }
 
     public int getSize() {
