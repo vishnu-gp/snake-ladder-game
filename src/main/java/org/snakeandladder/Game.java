@@ -68,10 +68,19 @@ public class Game implements Serializable {
         scanner.close();
     }
 
+    /**
+     * To save the current game to the disk so that it can be loaded later to resume the game.
+     * @param filename String File name.
+     */
     public void saveGame(String filename) {
         GameSaver.saveGame(this, filename);
     }
 
+    /**
+     * To load an already saved game to resume playing.
+     * @param filename String File name.
+     * @return Game
+     */
     public static Game loadGame(String filename) {
         return GameLoader.loadGame(filename);
     }

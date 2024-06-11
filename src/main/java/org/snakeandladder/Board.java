@@ -20,6 +20,11 @@ public class Board implements Serializable {
         return size;
     }
 
+    /**
+     * To get the new position of the player in the board considering the presence of snakes and ladders.
+     * @param position int Current position.
+     * @return int New position.
+     */
     public int getNewPosition(int position) {
         if (snakes.containsKey(position)) {
             return snakes.get(position);

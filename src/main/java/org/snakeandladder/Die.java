@@ -13,6 +13,7 @@ public class Die implements Serializable {
     }
 
     public int roll() {
+        // A die can have values from 1 to 6 on a roll
         return random.nextInt(6) + 1;
     }
 }
